@@ -1,0 +1,43 @@
+{
+    "code": 200,
+    "status": "success",
+    "data": {
+        "kube-system": {
+            "aggregation": "namespace",
+            "environment": "kube-system",
+            "cpuAllocationAverage": 1.1722014662792095,
+            "cpuCost": 1.7786141064265004,
+            "cpuEfficiency": 0.1918860195414832,
+            "efficiency": 0.2941316662714556,
+            "gpuAllocationAverage": 0,
+            "gpuCost": 0,
+            "ramAllocationAverage": 1.8162682513395947,
+            "ramCost": 0.3693853718844414,
+            "ramEfficiency": 0.7864509713562309,
+            "pvAllocationAverage": 0,
+            "pvCost": 0,
+            "networkCost": 0,
+            "sharedCost": 0,
+            "totalCost": 2.147999478310942
+        },
+        "kubecost": {
+            "aggregation": "namespace",
+            "environment": "kubecost",
+            "cpuAllocationAverage": 0.21282674489320763,
+            "cpuCost": 0.32292797917532096,
+            "cpuEfficiency": 0.06644634750805334,
+            "efficiency": 0.2560222283325275,
+            "gpuAllocationAverage": 0,
+            "gpuCost": 0,
+            "ramAllocationAverage": 0.25407533910539415,
+            "ramCost": 0.05167282616589865,
+            "ramEfficiency": 1.4407717502278574,
+            "pvAllocationAverage": 62.73333333333333,
+            "pvCost": 0.16561599999999999,
+            "networkCost": 0,
+            "sharedCost": 0,
+            "totalCost": 0.5402168053412195
+        }
+    },
+    "message": "aggregate cache hit: 7d::::::::namespace:::::false:false:true"
+}
