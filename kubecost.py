@@ -1,12 +1,10 @@
-import os
 import json
 import requests
-
 
 import pandas as pd
 import datetime as dt
 
-from azure.storage.blob import BlobServiceClient
+# from azure.storage.blob import BlobServiceClient
 
 # set the current date
 current_date = dt.datetime.now().strftime("%d_%m_%Y-%H:%M:%S")
@@ -16,7 +14,7 @@ url = "http://20.4.129.247:9090/model/aggregatedCostModel"
 
 # Use the requests library to make a GET request to the KubeCost API
 params = (
-    ("window", "7d"),   # parameter
+    ("window", "1d"),   # parameter
     ("aggregation", "namespace"),
     ("format", "json"),
 )
@@ -32,8 +30,8 @@ except requests.exceptions.HTTPError as err:
 # Parse the response as JSON
 jsondata = response.json()
 
-with open('data.json', 'w') as f:
-    json.dump(jsondata, f, indent=4)
+# with open('data.json', 'w') as f:
+    # json.dump(jsondata, f, indent=4)
 
 # insert totalCost per namespace into array
 costs = []
@@ -56,10 +54,6 @@ df = pd.DataFrame(costs, columns = ['Date', 'Namespace', 'CpuCost', 'GpuCost', '
 # write data to local csv file
 local_csv_file = "./data/kubecost_"+current_date+".csv"
 df.to_csv(local_csv_file, index=False)
-
-## TODO: merge each csv to one
-
-
 
 
 
